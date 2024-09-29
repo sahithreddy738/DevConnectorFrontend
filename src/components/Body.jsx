@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 
 const Body=() => {
     return (
-        <div>
+        <div className="w-screen h-screen" data-theme="dark">
            <NavBar />
            <Outlet/>
            <Footer/>

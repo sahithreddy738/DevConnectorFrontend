@@ -9,19 +9,23 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
-  const dispatch=useDispatch();
-  const navigate=useNavigate();
-  const handleSubmit=async () => {
-     try{
-        const res=await axios.post(LOGIN_URL,{email:email.trim(),password:password.trim()},{withCredentials:true});
-        dispatch(addUser(res.data));
-        navigate("/");
-     } catch(err) {
-       console.log(err);
-     }
-  }
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSubmit = async () => {
+    try {
+      const res = await axios.post(
+        LOGIN_URL,
+        { email: email, password: password.trim() },
+        { withCredentials: true }
+      );
+      dispatch(addUser(res.data));
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
-    <div className="card  w-96 shadow-xl mx-auto mt-10">
+    <div className="card  w-96 shadow-xl mx-auto mt-10 bg-base-300">
       <div className="card-body">
         <h2 className="card-title text-xl">Login!</h2>
         <div>
@@ -37,8 +41,19 @@ const Login = () => {
           />
         </div>
         <div className="card-actions justify-center mt-6 w-full">
-          <button className="btn btn-primary w-[70%] text-xl" onClick={handleSubmit}>Login</button>
+          <button
+            className="btn btn-primary w-[70%] text-xl"
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
         </div>
+        <p
+          className="text-center cursor-pointer"
+          onClick={() => navigate("/signup")}
+        >
+          New User?SignUp
+        </p>
       </div>
     </div>
   );

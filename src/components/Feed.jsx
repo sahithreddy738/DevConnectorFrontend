@@ -19,9 +19,10 @@ const Feed = () => {
   useEffect(()=>{
     getFeed();
   },[])
+  if(feed.length===0) return <h1 className='text-center text-3xl'>No New Users Found</h1>
   return (
      <>
-        {feed&&<UserCard user={feed[1]}/>}
+        {feed&&<UserCard user={feed[0]}/>}
      </>
   )
 }

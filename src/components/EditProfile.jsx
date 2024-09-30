@@ -5,6 +5,7 @@ import axios from "axios";
 import { UPDATE_PROFILE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/slices/userSlice";
+import UserCard from "./UserCard";
 
 const EditProfile = ({ user }) => {
   const [updateUser, setUpdateUser] = useState({
@@ -42,7 +43,8 @@ const EditProfile = ({ user }) => {
     }
   };
   return (
-    <div className="card bg-base-300 w-96 shadow-xl  mt-2 mx-auto">
+    <div className="flex flex-row justify-center">
+    <div className="card bg-base-300 w-96 ml-72 shadow-xl  mt-2">
       <div className="card-body">
         <h2 className="card-title text-xl">Edit Profile</h2>
         <div>
@@ -100,6 +102,8 @@ const EditProfile = ({ user }) => {
           </button>
         </div>
       </div>
+    </div>
+    <UserCard user={updateUser}/>
     </div>
   );
 };

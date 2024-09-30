@@ -13,7 +13,7 @@ const Login = () => {
   const navigate=useNavigate();
   const handleSubmit=async () => {
      try{
-        const res=await axios.post(LOGIN_URL,{email,password},{withCredentials:true});
+        const res=await axios.post(LOGIN_URL,{email:email.trim(),password:password.trim()},{withCredentials:true});
         dispatch(addUser(res.data));
         navigate("/");
      } catch(err) {
@@ -28,12 +28,12 @@ const Login = () => {
           <Input
             labelName="Email"
             value={email}
-            onChange={(newValue) => setEmail(newValue)}
+            onChange={(value) => setEmail(value)}
           />
           <Input
             labelName="Password"
             value={password}
-            onChange={(newValue) => setPassword(newValue)}
+            onChange={(value) => setPassword(value)}
           />
         </div>
         <div className="card-actions justify-center mt-6 w-full">

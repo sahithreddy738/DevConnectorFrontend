@@ -18,7 +18,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar bg-black scrollbar" data-theme="halloween">
+    <div className="navbar bg-black" data-theme="halloween">
       <div className="flex-1">
         {user ? (
           <Link to="/" className="btn btn-ghost text-xl">DevConnector</Link>
@@ -27,7 +27,7 @@ const NavBar = () => {
         )}
       </div>
       {user && (
-        <div className="flex-none ">
+        <div className="flex-none gap-2">
           <p>Welcome {user?.firstName}</p>
           <div className="dropdown dropdown-end">
             <div
@@ -53,7 +53,10 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link to="/connections">Connections</Link>
+              </li>
+              <li>
+                <Link to="/requests">Requests</Link>
               </li>
               <li>
                 <Link onClick={handleLogout}>Logout</Link>

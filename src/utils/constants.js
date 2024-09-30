@@ -3,3 +3,7 @@ export const LOGOUT_URL="http://localhost:3000/logout";
 export const GET_PROFILE_URL="http://localhost:3000/profile/view";
 export const UPDATE_PROFILE_URL="http://localhost:3000/profile/edit";
 export const FEED_URL="http://localhost:3000/user/feed";
+export const CONNECTIONS_URL="http://localhost:3000/user/connections";
+export const CONNECTION_REQUEST_URL="http://localhost:3000/user/requests/received";
+export const REVIEW_REQUEST_URL="http://localhost:3000/request/review/";
+export const REQUEST_SENT_URL='http://localhost:3000/request/';

@@ -43,9 +43,10 @@ const Login = () => {
     }
   };
   return (
-    <div className="card  w-96 shadow-xl mx-auto mt-10 bg-base-300">
+    <div className="w-full h-[80%]">
+    <div className="card  w-96 shadow-xl mx-auto mt-10 bg-zinc-300">
       <div className="card-body">
-        <h2 className="card-title text-2xl">
+        <h2 className="card-title text-2xl font-bold">
           {showForgotPassword ? "Forgot Password" : "Login"}
         </h2>
         <div>
@@ -72,7 +73,7 @@ const Login = () => {
           <></>
         ) : (
           <p
-            className="text-end text-purple-600 mt-2 cursor-pointer"
+            className="text-end text-base font-semibold text-emerald-950 mt-2 cursor-pointer"
             onClick={() => {
               setShowForgotPassword(true);
               setErrorMessage("");
@@ -93,7 +94,7 @@ const Login = () => {
         </div>
         {showForgotPassword ? (
           <p
-            className="text-center cursor-pointer mt-2"
+            className="text-center font-semibold text-base cursor-pointer mt-2"
             onClick={() => {
               setShowForgotPassword(false);
               setErrorMessage("");
@@ -110,6 +111,7 @@ const Login = () => {
           </p>
         )}
       </div>
+    </div>
     </div>
   );
 };

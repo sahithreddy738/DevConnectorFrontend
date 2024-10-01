@@ -4,7 +4,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFeed } from "../utils/slices/feedSlice";
 
-const UserCard = ({ user }) => {
+const ProfileUserCard = ({ user }) => {
   const userLoggedIn = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const handleSentRequest = async (status, userId) => {
@@ -20,7 +20,7 @@ const UserCard = ({ user }) => {
     }
   };
   return (
-    <div className="card bg-zinc-300 w-[80%] sm:w-[45%] lg:w-[30%] h-[700px] mx-auto shadow-xl mt-8">
+    <div className="card bg-zinc-300 w-[50%] sm:w-full lg:w-[60%] h-[700px] sm:ml-0 lg:ml-20 shadow-xl mt-8">
       <figure className="h-[65%] w-full">
         <img
           className="h-full w-full object-fill"
@@ -57,4 +57,4 @@ const UserCard = ({ user }) => {
   );
 };
 
-export default UserCard;
+export default ProfileUserCard;

@@ -20,17 +20,17 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar bg-black" data-theme="halloween">
+    <div className="navbar bg-black w-full h-[10%]" data-theme="halloween">
       <div className="flex-1">
         {user ? (
-          <Link to="/" className="btn btn-ghost text-xl">DevConnector</Link>
+          <Link to="/" className="btn btn-ghost text-2xl text-red-500 font-bold">DevConnector</Link>
         ) : (
-          <Link className="btn btn-ghost text-xl">DevConnector</Link>
+          <Link className="btn btn-ghost text-2xl text-red-500 font-bold">DevConnector</Link>
         )}
       </div>
       {user && (
         <div className="flex-none gap-2">
-          <p>Welcome {user?.firstName}</p>
+          <p className="hidden sm:block">Welcome {user?.firstName}</p>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}

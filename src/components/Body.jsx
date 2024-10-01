@@ -15,7 +15,6 @@ const Body=() => {
         try{
             const res=await axios.get(GET_PROFILE_URL,{withCredentials:true});
             dispatch(addUser(res.data));
-            navigate("/");
         }catch(err) {
             if(err.status===401) navigate("/login");
             console.log(err.message);
@@ -25,11 +24,13 @@ const Body=() => {
        fetchUser()
     },[]);
     return (
-        <div className="w-screen h-screen scrollbar" data-theme="dark">
-           <NavBar />
-           <Outlet />
-           <Footer />
+        <div className="min-h-screen flex flex-col bg-zinc-300">
+        <NavBar />
+        <div className="flex-grow">
+            <Outlet />
         </div>
+        <Footer />
+    </div>
     )
 }
 

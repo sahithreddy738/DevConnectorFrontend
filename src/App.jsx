@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <>
+    <div>
       <Provider store={appStore}>
       <BrowserRouter basename="/">
       <ToastContainer/>
@@ -30,7 +30,7 @@ function App() {
            </Routes>
        </BrowserRouter>
       </Provider>
-    </>
+    </div>
   );
 }
 

@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/slices/userSlice";
 import UserCard from "./UserCard";
 import { toast } from "react-toastify";
+import ProfileUserCard from "./ProfileUserCard";
 
 const EditProfile = ({ user }) => {
   const [updateUser, setUpdateUser] = useState({
@@ -45,10 +46,10 @@ const EditProfile = ({ user }) => {
     }
   };
   return (
-    <div className="flex flex-row justify-center">
-    <div className="card bg-base-300 w-96 ml-72 shadow-xl  mt-2">
+    <div className="flex sm:flex-row justify-center sm:justify-normal lg:justify-normal sm:gap-6 lg:space-x-4  w-full h-[700px] sm:h-[700px] lg:h-[700px]">
+    <div className="card bg-zinc-300  h-[100%] w-[90%] mx-3 sm:w-[45%] lg:w-[35%] sm:ml-10 lg:ml-48 shadow-xl  mt-8">
       <div className="card-body">
-        <h2 className="card-title text-xl">Edit Profile</h2>
+        <h2 className="card-title text-3xl">Edit Profile</h2>
         <div>
           <div className="flex flex-row space-x-2">
             <Input
@@ -86,7 +87,7 @@ const EditProfile = ({ user }) => {
           />
           <label className="form-control">
             <div className="label">
-              <span className="label-text">about</span>
+              <span className="label-text text-lg font-semibold">about</span>
             </div>
             <textarea
               className="textarea textarea-bordered h-24"
@@ -97,7 +98,7 @@ const EditProfile = ({ user }) => {
         </div>
         <div className="card-actions justify-center mt-6 w-full">
           <button
-            className="btn btn-primary w-[70%] text-xl"
+            className="btn btn-primary sm:w-[60%] lg:w-[50%] text-xl"
             onClick={updateProfile}
           >
             Save Profile
@@ -105,7 +106,9 @@ const EditProfile = ({ user }) => {
         </div>
       </div>
     </div>
-    <UserCard user={updateUser}/>
+     <div className="hidden sm:block sm:w-[40%] lg:[50%]">
+     <ProfileUserCard user={updateUser}/>
+     </div>
     </div>
   );
 };

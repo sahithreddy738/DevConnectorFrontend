@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import { CONNECTIONS_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnections } from "../utils/slices/connectionsSlice";
+import { useNavigate } from "react-router-dom";
 
 const Connections = () => {
   const connections = useSelector((store) => store.connections);
   const dispatch = useDispatch();
+  const navigate=useNavigate();
   const getConnections = async () => {
     try {
       const res = await axios.get(CONNECTIONS_URL, { withCredentials: true });
@@ -21,7 +23,7 @@ const Connections = () => {
   if (connections.length === 0)
     return (
       <div className="flex flex-col text-center space-y-2">
-        <h1 className="text-3xl">No Requests Found</h1>;
+        <h1 className="text-3xl">No Requests Found</h1>
         <div className="flex flex-row gap-2 justify-center items-center">
           <p>Want to Know New Users?</p>
           <button

@@ -6,6 +6,7 @@ import { UPDATE_PROFILE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/slices/userSlice";
 import UserCard from "./UserCard";
+import { toast } from "react-toastify";
 
 const EditProfile = ({ user }) => {
   const [updateUser, setUpdateUser] = useState({
@@ -38,8 +39,9 @@ const EditProfile = ({ user }) => {
         { withCredentials: true }
       );
      dispatch(addUser(res.data.user));
+     toast.success("Profile Updated");
     } catch (err) {
-      console.log(err);
+      toast.error(`Error:Invalid Details`);
     }
   };
   return (

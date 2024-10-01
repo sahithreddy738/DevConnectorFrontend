@@ -8,3 +8,4 @@ export const CONNECTION_REQUEST_URL="http://localhost:3000/user/requests/receive
 export const REVIEW_REQUEST_URL="http://localhost:3000/request/review/";
 export const REQUEST_SENT_URL='http://localhost:3000/request/';
 export const SIGNUP_URL="http://localhost:3000/signup";
+export const UPDATE_URL="http://localhost:3000/profile/password";

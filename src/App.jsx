@@ -8,6 +8,8 @@ import Feed from "./components/Feed";
 import Connections from "./components/Connections";
 import Requests from "./components/Requests";
 import SignUp from "./components/SignUp";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
     <>
       <Provider store={appStore}>
       <BrowserRouter basename="/">
+      <ToastContainer/>
            <Routes>
                <Route path="/" element={<Body/>}>
                      <Route path="/" element={<Feed/>}/>

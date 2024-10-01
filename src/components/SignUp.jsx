@@ -13,6 +13,7 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+  const [errorMessage,setErrorMessage]=useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const hanldeUser = (value, field) => {
@@ -23,14 +24,15 @@ const SignUp = () => {
   };
   const handleSubmit = async () => {
     try {
-        console.log(newUser)
       const res = await axios.post(SIGNUP_URL, newUser, {
         withCredentials: true,
       });
       dispatch(addUser(res.data.newUser));
+      setErrorMessage("");
       navigate("/profile");
     } catch (err) {
       console.log(err);
+      setErrorMessage(err.response.data);
     }
   };
   return (
@@ -59,6 +61,7 @@ const SignUp = () => {
             onChange={(value) => hanldeUser(value, "password")}
           />
         </div>
+        <p className="text-red-500 ml-2">{errorMessage}</p>
         <div className="card-actions justify-center mt-4 w-full">
           <button
             className="btn btn-primary w-[70%] text-xl"
@@ -69,7 +72,9 @@ const SignUp = () => {
         </div>
         <p
           className="text-center cursor-pointer mt-2"
-          onClick={() => navigate("/login")}
+          onClick={() => {navigate("/login")
+            setErrorMessage("");
+          }}
         >
           Existing User?Login
         </p>

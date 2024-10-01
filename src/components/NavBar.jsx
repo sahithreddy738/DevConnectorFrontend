@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { LOGOUT_URL } from "../utils/constants";
 import { removeUser } from "../utils/slices/userSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -12,6 +13,7 @@ const NavBar = () => {
     try {
    await axios.post(LOGOUT_URL, {}, { withCredentials: true });
       dispatch(removeUser());
+      toast.success("Loggedout Successfully");
       navigate("/login");
     } catch (err) {
       console.log(err);

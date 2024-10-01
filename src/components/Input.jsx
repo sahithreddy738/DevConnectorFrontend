@@ -8,7 +8,7 @@ const Input = ({ labelName, value, onChange }) => {
       <div className="label">
         <span className="label-text">{labelName}</span>
       </div>
-      {labelName === "Password" ? (
+      {labelName === "Password" || labelName==="New Password" ? (
         <input
           type="password"
           value={value}

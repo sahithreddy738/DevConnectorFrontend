@@ -20,10 +20,10 @@ const ProfileUserCard = ({ user }) => {
     }
   };
   return (
-    <div className="card bg-zinc-300 w-[50%] sm:w-full lg:w-[60%] h-[700px] sm:ml-0 lg:ml-20 shadow-xl mt-8">
-      <figure className="h-[65%] w-full">
+    <div className="card bg-zinc-300 w-[52%] sm:w-full lg:w-[60%] sm:ml-0 lg:ml-20 shadow-xl mt-8">
+      <figure className="h-96 w-full">
         <img
-          className="h-full w-full object-fill"
+          className="h-full w-full"
           src={user?.photoURL}
           alt="user-photo"
         />

@@ -61,7 +61,10 @@ const Connections = () => {
                 </h1>
               </div>
               <div className="w-[20%] sm:w-[25%] lg:w-[30%]">
-                <button className="bg-blue-500 rounded-lg py-2 px-4 text-white">
+                <button
+                  className="bg-blue-500 rounded-lg py-2 px-4 text-white"
+                  onClick={() => navigate("/profile/" + connection._id)}
+                >
                   View Profile
                 </button>
               </div>

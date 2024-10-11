@@ -16,8 +16,7 @@ const Body=() => {
             const res=await axios.get(GET_PROFILE_URL,{withCredentials:true});
             dispatch(addUser(res.data));
         }catch(err) {
-            if(err.status===401) navigate("/login");
-            console.log(err.message);
+           navigate("/login");
         }
     }
     useEffect(()=>{

@@ -104,7 +104,7 @@ const Login = () => {
           </p>
         ) : (
           <p
-            className="text-center cursor-pointer mt-2"
+            className="text-center cursor-pointer mt-2 text-base font-semibold"
             onClick={() => navigate("/signup")}
           >
             New User?SignUp

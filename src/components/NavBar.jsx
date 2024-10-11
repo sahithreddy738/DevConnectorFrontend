@@ -11,7 +11,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-   await axios.post(LOGOUT_URL, {}, { withCredentials: true });
+      await axios.post(LOGOUT_URL, {}, { withCredentials: true });
       dispatch(removeUser());
       toast.success("Loggedout Successfully");
       navigate("/login");
@@ -23,9 +23,16 @@ const NavBar = () => {
     <div className="navbar bg-black w-full h-[10%]" data-theme="halloween">
       <div className="flex-1">
         {user ? (
-          <Link to="/" className="btn btn-ghost text-2xl text-red-500 font-bold">DevConnector</Link>
+          <Link
+            to="/"
+            className="btn btn-ghost text-2xl text-red-500 font-bold transition-transform duration-300 ease-in-out hover:scale-110"
+          >
+            DevConnector
+          </Link>
         ) : (
-          <Link className="btn btn-ghost text-2xl text-red-500 font-bold">DevConnector</Link>
+          <Link className="btn btn-ghost text-2xl text-red-500 font-bold transition-transform duration-300 ease-in-out hover:scale-110">
+            DevConnector
+          </Link>
         )}
       </div>
       {user && (
@@ -38,10 +45,7 @@ const NavBar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src={user?.photoURL}
-                />
+                <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
               </div>
             </div>
             <ul

@@ -6,7 +6,7 @@ const Input = ({ labelName, value, onChange }) => {
   return (
     <label className="form-control w-full max-w-xs">
       <div className="label">
-        <span className="label-text">{labelName}</span>
+        <span className="label-text text-lg font-semibold">{labelName}</span>
       </div>
       {labelName === "Password" || labelName==="New Password" ? (
         <input

@@ -10,11 +10,12 @@ import Requests from "./components/Requests";
 import SignUp from "./components/SignUp";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ViewProfile from "./components/ViewProfile";
 
 
 function App() {
   return (
-    <>
+    <div>
       <Provider store={appStore}>
       <BrowserRouter basename="/">
       <ToastContainer/>
@@ -26,11 +27,12 @@ function App() {
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/connections" element={<Connections/>}/>
                     <Route path="/requests" element={<Requests/>}/>
+                    <Route path="/profile/:userId" element={<ViewProfile/>}/>
                 </Route>
            </Routes>
        </BrowserRouter>
       </Provider>
-    </>
+    </div>
   );
 }
 

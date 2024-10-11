@@ -3,6 +3,7 @@ import userReducer from "./slices/userSlice";
 import feedReducer from "./slices/feedSlice";
 import connectionReducer from "./slices/connectionsSlice";
 import requestReducer from "./slices/requestsSlice";
+import profileReducer from "./slices/profileSlice";
 
 
 const appStore=configureStore({
@@ -10,7 +11,8 @@ const appStore=configureStore({
       user:userReducer,
       feed:feedReducer,
       connections:connectionReducer,
-      requests:requestReducer
+      requests:requestReducer,
+      profile:profileReducer
     }
 })
 

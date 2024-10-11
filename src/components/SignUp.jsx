@@ -36,9 +36,10 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="card  w-96 shadow-xl bg-base-300 mx-auto mt-4">
+  <div className="w-full h-[80%]">
+    <div className="card  w-96 shadow-xl bg-zinc-300 mx-auto mt-4">
       <div className="card-body">
-        <h2 className="card-title text-xl">Sign Up!</h2>
+        <h2 className="card-title text-2xl font-bold">Sign Up!</h2>
         <div>
           <Input
             labelName="firstName"
@@ -71,7 +72,7 @@ const SignUp = () => {
           </button>
         </div>
         <p
-          className="text-center cursor-pointer mt-2"
+          className="text-center text-base font-semibold cursor-pointer mt-2"
           onClick={() => {navigate("/login")
             setErrorMessage("");
           }}
@@ -79,6 +80,7 @@ const SignUp = () => {
           Existing User?Login
         </p>
       </div>
+    </div>
     </div>
   );
 };

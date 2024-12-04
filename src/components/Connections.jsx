@@ -1,25 +1,12 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { CONNECTIONS_URL } from "../utils/constants";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addConnections } from "../utils/slices/connectionsSlice";
+
 import { useNavigate } from "react-router-dom";
 
 const Connections = () => {
   const connections = useSelector((store) => store.connections);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const getConnections = async () => {
-    try {
-      const res = await axios.get(CONNECTIONS_URL, { withCredentials: true });
-      dispatch(addConnections(res?.data?.userConnections));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    getConnections();
-  }, []);
   if (connections.length === 0)
     return (
       <div className="flex flex-col text-center space-y-2">

@@ -4,6 +4,7 @@ import feedReducer from "./slices/feedSlice";
 import connectionReducer from "./slices/connectionsSlice";
 import requestReducer from "./slices/requestsSlice";
 import profileReducer from "./slices/profileSlice";
+import chatReducer from "./slices/chatSlice";
 
 
 const appStore=configureStore({
@@ -12,7 +13,8 @@ const appStore=configureStore({
       feed:feedReducer,
       connections:connectionReducer,
       requests:requestReducer,
-      profile:profileReducer
+      profile:profileReducer,
+      chat:chatReducer
     }
 })
 

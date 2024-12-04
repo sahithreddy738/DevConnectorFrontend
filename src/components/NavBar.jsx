@@ -4,6 +4,10 @@ import { LOGOUT_URL } from "../utils/constants";
 import { removeUser } from "../utils/slices/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import {
+  Bell,
+  MessageSquareMore,
+} from "lucide-react";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -36,8 +40,16 @@ const NavBar = () => {
         )}
       </div>
       {user && (
-        <div className="flex-none gap-2">
-          <p className="hidden sm:block">Welcome {user?.firstName}</p>
+        <div className="flex-none items-center gap-2">
+            <p className="hidden sm:block">Welcome {user?.firstName}</p>
+          <div className="flex items-center gap-2 p-1">
+            <Link to={"/chats"}>
+              <MessageSquareMore className="h-6 w-6" />
+            </Link>
+            <Link to={"/chats"}>
+              <Bell className="h-6 w-6" />
+            </Link>
+          </div>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}

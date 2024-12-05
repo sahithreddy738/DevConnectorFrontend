@@ -5,7 +5,7 @@ import connectionReducer from "./slices/connectionsSlice";
 import requestReducer from "./slices/requestsSlice";
 import profileReducer from "./slices/profileSlice";
 import chatReducer from "./slices/chatSlice";
-
+import messageReducer from "./slices/messageSlice";
 
 const appStore=configureStore({
     reducer:{
@@ -14,7 +14,8 @@ const appStore=configureStore({
       connections:connectionReducer,
       requests:requestReducer,
       profile:profileReducer,
-      chat:chatReducer
+      chat:chatReducer,
+      message:messageReducer
     }
 })
 

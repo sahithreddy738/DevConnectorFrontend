@@ -13,3 +13,12 @@ export const UPDATE_URL = BASE_URL + "profile/password";
 export const GET_USER_PROFILE = BASE_URL + "profile/";
 export const GET_CHATS=BASE_URL+"chat";
 export const POST_GROUPCHAT=BASE_URL+"groupChat";
+export const GET_MESSAGES=BASE_URL+"message/";
+export const GET_CHAT_DETAILS=BASE_URL+"chat/";
+export const POST_MESSAGE=BASE_URL+"message";
+export const DATE_OPTIONS = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+    timeZone: "UTC", 
+  };

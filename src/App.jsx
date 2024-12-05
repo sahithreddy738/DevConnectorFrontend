@@ -13,6 +13,9 @@ import "react-toastify/dist/ReactToastify.css";
 import ViewProfile from "./components/ViewProfile";
 import Body from "./pages/Body";
 import ChatPage from "./pages/ChatPage";
+import ChatHome from "./components/NoChat";
+import ChatDetails from "./components/ChatDetails";
+import ChatMessage from "./components/ChatMessage";
 
 function App() {
   return (
@@ -29,7 +32,10 @@ function App() {
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/profile/:userId" element={<ViewProfile />} />
-              <Route path="/chats" element={<ChatPage/>} > 
+              <Route path="/chats" element={<ChatPage />}>
+                <Route index element={<ChatHome />} />
+                <Route path=":chatId" element={<ChatMessage />} />
+                <Route path=":chatId/chatDetails" element={<ChatDetails />} />
               </Route>
             </Route>
           </Routes>

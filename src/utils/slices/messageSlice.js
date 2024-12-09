@@ -9,7 +9,7 @@ const messageSlice=createSlice({
             const newMessages = action.payload.filter(
               (newMessage) => !existingIds.has(newMessage._id)
             );
-            state.push(...newMessages);
+            newMessages.forEach((newMessage)=>state.unshift(newMessage));
         },
         removeMessages:()=>{
            return [];

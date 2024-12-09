@@ -1,16 +1,16 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  GET_MESSAGES,
   POST_MESSAGE,
 } from "../utils/constants";
-import { addMessages, removeMessages } from "../utils/slices/messageSlice";
+import { addMessages } from "../utils/slices/messageSlice";
 import {useParams } from "react-router-dom";
 import Messages from "./Messages";
 import socket from "../utils/socket";
 import { addNotifications } from "../utils/slices/notificationsSlice";
 import { Eye, Send } from "lucide-react";
+
 
 const ChatMessage = ({ handleClick }) => {
   const [inputMessage, setInputMessage] = useState("");
@@ -18,21 +18,6 @@ const ChatMessage = ({ handleClick }) => {
   const user = useSelector((store) => store.user);
   const { chatId } = useParams();
   const dispatch = useDispatch();
-  const fetchMessages = async () => {
-    try {
-      const res = await axios.get(GET_MESSAGES + chatId, {
-        withCredentials: true,
-      });
-      dispatch(addMessages(res?.data?.data));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchMessages();
-    return () => dispatch(removeMessages());
-  }, [chatId]);
   useEffect(() => {
     socket.on("connection", () => {
       console.log("Connected to server, Socket ID:", socket.id);

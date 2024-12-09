@@ -12,7 +12,7 @@ const ChatPage = () => {
   const fetchChats = async () => {
     try {
       const chatData = await axios.get(GET_CHATS, { withCredentials: true });
-      dispatch(addChats(chatData?.data));
+      dispatch(addChats(chatData?.data?.data));
     } catch (err) {
       console.log(err);
     }
@@ -21,12 +21,23 @@ const ChatPage = () => {
   useEffect(() => {
     fetchChats();
   }, [location]);
+  const isChatDetail =
+    location.pathname.startsWith("/chats/") && location.pathname !== "/chats";
   return (
     <div className="w-full h-full flex px-1 gap-1">
-      <div className="w-[30%]">
+      <div
+        className={`${
+          isChatDetail ? "hidden md:block md:w-[30%]" : "w-full md:w-[30%]"
+        }`}
+      >
         <Chats />
       </div>
-      <div className="w-[70%] ">
+
+      <div
+        className={`${
+          isChatDetail ? "w-full md:w-[70%]" : "hidden md:block md:w-[70%]"
+        }`}
+      >
         <Outlet />
       </div>
     </div>

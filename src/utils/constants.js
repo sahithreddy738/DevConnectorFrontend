@@ -16,9 +16,14 @@ export const POST_GROUPCHAT=BASE_URL+"groupChat";
 export const GET_MESSAGES=BASE_URL+"message/";
 export const GET_CHAT_DETAILS=BASE_URL+"chat/";
 export const POST_MESSAGE=BASE_URL+"message";
+export const ADD_MEMBER=BASE_URL+"groupChat/addMember";
+export const DELETE_MEMBER=BASE_URL+"groupChat/deleteMember";
+export const ADD_CHAT=BASE_URL+"chat/";
+export const UPDATE_CHAT_NAME=BASE_URL+"chat/rename";
+
 export const DATE_OPTIONS = {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
-    timeZone: "UTC", 
+    timeZone: "IST", 
   };

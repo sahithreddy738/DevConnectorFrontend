@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const ChatCard = ({ chatId, chatName, members, isGroupChat }) => {
@@ -18,22 +18,23 @@ const ChatCard = ({ chatId, chatName, members, isGroupChat }) => {
     navigate(`/chats/${chatId}`);
   };
 
+
   const backgroundChatStyle =
     selectedChat?._id === chatId ? "lightgray" : "";
   return (
     <>
       <div
-        className="w-full rounded-md  p-2 h-20 flex gap-x-0.5 hover:bg-gray-400 border-b border-gray-400"
+        className="w-full rounded-md items-center  h-20 flex gap-0 md:gap-x-0.5 hover:bg-gray-400 border-b border-gray-400"
         style={{ backgroundColor: backgroundChatStyle }}
         onClick={handleClick}
       >
-        <div className="w-[25%] px-1">
+        <div className="w-[25%] md:w-[25%] px-1">
           {!isGroupChat ? (
             <div className="relative w-full h-full p-1">
               <img
                 src={chatAvatar[0]?.photoURL}
                 alt="chat-image"
-                className="rounded-full w-12 h-12 "
+                className="rounded-full w-12 h-12 md:w-12 md:h-12 "
               />
             </div>
           ) : (
@@ -43,7 +44,7 @@ const ChatCard = ({ chatId, chatName, members, isGroupChat }) => {
                   key={index}
                   src={avatar?.photoURL}
                   alt={`Group Avatar ${index + 1}`}
-                  className={`rounded-full w-12 h-12 ${
+                  className={`rounded-full w-10 h-10 md:w-12 md:h-12 ${
                     index === 1 ? "-ml-4" : ""
                   }`}
                 />
@@ -52,7 +53,7 @@ const ChatCard = ({ chatId, chatName, members, isGroupChat }) => {
           )}
         </div>
         <div className="flex items-start">
-          <span className="font-semibold text-xl text-neutral-700">
+          <span className="font-semibold md:text-xl text-xl text-neutral-700">
             {chatName}
           </span>
         </div>

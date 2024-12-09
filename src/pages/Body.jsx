@@ -34,7 +34,7 @@ const Body = () => {
     fetchUser();
   }, []);
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-300 hide-scrollbar">
+    <div className="min-h-screen flex flex-col bg-zinc-300 hide-scrollbar min-w-screen">
       <NavBar />
       <div className="flex-grow">
         <Outlet />
